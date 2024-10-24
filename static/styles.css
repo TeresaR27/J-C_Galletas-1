@@ -1,0 +1,112 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Color de fondo general */
+    margin: 0;
+    padding: 20px;
+    color: #333; /* Color de texto */
+}
+
+header {
+    background: #d4c2a2; /* Un tono beige claro que combina con el logo */
+    color: #6a4c4c; /* Color marrón oscuro para el texto */
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    color: #6a4c4c; /* Color marrón oscuro */
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Formulario */
+form {
+    background: #ffffff; /* Fondo blanco para formularios */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para formularios */
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    border: 1px solid #ddd; /* Borde gris claro */
+    width: calc(100% - 22px);
+}
+
+input[type="submit"],
+button {
+    background-color: #e1a84d; /* Color amarillo para botones */
+    color: white; /* Texto blanco en botones */
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #d89c4a; /* Color amarillo más oscuro al pasar el mouse */
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2; /* Color de fondo para encabezados de tabla */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Color de fondo para fila al pasar el mouse */
+}
+
+/* Mensajes Flash */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background-color: #dff0d8; /* Verde suave */
+    color: #3c763d; /* Texto verde oscuro */
+}
+
+.flash.danger {
+    background-color: #f2dede; /* Rojo suave */
+    color: #a94442; /* Texto rojo oscuro */
+}
+
+.flash.info {
+    background-color: #d9edf7; /* Azul suave */
+    color: #31708f; /* Texto azul oscuro */
+}

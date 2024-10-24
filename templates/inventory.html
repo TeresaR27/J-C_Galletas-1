@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Inventario de {{ producto.nombre }}</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Inventario de {{ producto.nombre }}</h1>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="cantidad_producida" class="form-label">Cantidad Producida:</label>
+                <input type="number" name="cantidad_producida" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_vendida" class="form-label">Cantidad Vendida:</label>
+                <input type="number" name="cantidad_vendida" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_devueltas" class="form-label">Cantidad Devueltas:</label>
+                <input type="number" name="cantidad_devueltas" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_defectuosa" class="form-label">Cantidad Defectuosa:</label>
+                <input type="number" name="cantidad_defectuosa" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha:</label>
+                <input type="date" name="fecha" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Inventario</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+        </form>
+        <h2 class="my-4">Historial de Inventario</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cantidad Producida</th>
+                    <th>Cantidad Vendida</th>
+                    <th>Cantidad Devueltas</th>
+                    <th>Cantidad Defectuosa</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for inv in inventarios %}
+                    <tr>
+                        <td>{{ inv.id }}</td>
+                        <td>{{ inv.cantidad_producida }}</td>
+                        <td>{{ inv.cantidad_vendida }}</td>
+                        <td>{{ inv.cantidad_devueltas }}</td>
+                        <td>{{ inv.cantidad_defectuosa }}</td>
+                        <td>{{ inv.fecha }}</td>
+                        <td>
+                            <a href="{{ url_for('delete_inventory', id=inv.id) }}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver</a>
+    </div>
+</body>
+</html>
